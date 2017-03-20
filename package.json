@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/Made-of-Clay/websocket-clock/issues"
   },
-  "homepage": "https://github.com/Made-of-Clay/websocket-clock#readme"
+  "homepage": "https://github.com/Made-of-Clay/websocket-clock#readme",
+  "dependencies": {
+    "express": "^4.15.2",
+    "socket.io": "^1.7.3"
+  }
 }
