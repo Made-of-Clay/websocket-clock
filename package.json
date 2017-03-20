@@ -1,11 +1,19 @@
 {
-  "name": "js-clock",
-  "version": "0.0.0",
-  "description": "A websocket clock for me :)",
+  "name": "websocket-clock",
+  "version": "1.0.0",
+  "description": "A JS clock connected via websockets so I can have a clock display on my Raspberry Pi touch screen",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Made-of-Clay/websocket-clock.git"
+  },
+  "author": "Adam Leis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Made-of-Clay/websocket-clock/issues"
+  },
+  "homepage": "https://github.com/Made-of-Clay/websocket-clock#readme"
 }
