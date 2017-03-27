@@ -4,7 +4,8 @@
   "description": "A JS clock connected via websockets so I can have a clock display on my Raspberry Pi touch screen",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "sass": "sass ./src/styles:./dist --style compressed --watch",
+    "sass:once": "sass ./src/styles:./dist --style compressed --update"
   },
   "repository": {
     "type": "git",
