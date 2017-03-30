@@ -1,0 +1,58 @@
+.numbers {
+    font-size: 2em;
+
+    @extend %clock-children;
+}
+.number {
+    $numberWidth: 2;
+    // text-align: center;
+    // top: calc(50% - 0.5em);
+    // width: 100%;
+    height: 100%;
+    left: 50%;
+    margin-left: -#{$numberWidth / 2}em;
+
+    @extend %clock-elements;
+
+    > b {
+        display: inline-block;
+        font-weight: normal;
+        margin-top: 0.25em;
+        text-align: center;
+        width: #{$numberWidth}em;
+    }
+
+    // $xlate: unquote('translateY(-4em)');
+    $xlate: unquote('');
+    $increment: 30;
+
+    // THIS ISN'T QUITE RIGHT
+    @for $i from 1 through 11 {
+        // $rotateAmt: $i
+        // $rotate: unquote("");
+        &[data-number="#{$i}"] {
+            transform: #{$xlate} rotate(#{$i * $increment}deg);
+        }
+    }
+
+    // $numberMap: (
+    //     1: unquote('translate(0em, 0em)'),
+    //     2: unquote('translate(0em, 0em)'),
+    //     3: unquote('translateX(4em)'),
+    //     4: unquote('translate(0em, 0em)'),
+    //     5: unquote('translate(0em, 0em)'),
+    //     6: unquote('translateY(4em)'),
+    //     7: unquote('translate(0em, 0em)'),
+    //     8: unquote('translate(0em, 0em)'),
+    //     9: unquote('translateX(-4em)'),
+    //     10: unquote('translate(0em, 0em)'),
+    //     11: unquote('translate(0em, 0em)'),
+    //     12: unquote('translateY(-4em)')
+    // );
+
+    // @each $num, $xlate in $numberMap {
+    //     &[data-number="#{$num}"] {
+    //         transform: $xlate;
+    //     }
+    // }
+}
