@@ -34,32 +34,25 @@ app.get('/assets/socket.io.js', (req, res) => {
     }
 });
 
-io.on('connection', (socket) => {
-    socket.on('disconnect', disconnect);
-    simpleConnect();
-    clock.start();
+// let clock = new Clock();
+clock.start();
 
-    global.emitter.on('tick', () => {
-        let date = new Date();
-        let time = {
-            hour: date.getHours(),
-            minute: date.getMinutes(),
-            second: date.getSeconds()
-        };
-        console.log('-------------------');
-        console.log('tick', `${time.hour}:${time.minute}:${time.second}`);
-        io.emit('tick', time);
-    });
+io.on('connection', (socket) => {
+    // let clock = new Clock();
+    socket.on('disconnect', () => console.log('A user has disconnected'));
+    console.log('A user has connected');
 });
 
-function disconnect() {
-    simpleDisconnect();
-    clock.stop();
-}
+global.emitter.on('tick', tickCallback);
 
-function simpleConnect () {
-    console.log('A user has connected');
-}
-function simpleDisconnect () {
-    console.log('A user has disconnected');
+function tickCallback() {
+    let date = new Date();
+    let time = {
+        hour: date.getHours(),
+        minute: date.getMinutes(),
+        second: date.getSeconds()
+    };
+    // console.log('-------------------');
+    // console.log('tick', `${time.hour}:${time.minute}:${time.second}`);
+    io.emit('tick', time);
 }

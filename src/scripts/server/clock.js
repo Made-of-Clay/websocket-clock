@@ -12,7 +12,10 @@ module.exports = (function () {
         }
 
         start() {
-            this.stop();
+            if (this.timerId !== null) {
+                return;
+            }
+            console.log('start clock');
             let interval = 1000; // 1 sec
             this.timerId = timers.setInterval(() => {
                 global.emitter.emit('tick');
@@ -20,12 +23,13 @@ module.exports = (function () {
         }
 
         stop() {
-            if (this.timerId !== null) {
-                timers.clearInterval(this.timerId);
-                this.timerId = null;
-            }
+            console.log('stop clock');
+            console.log("this.timerId", this.timerId);
+            timers.clearInterval(this.timerId);
+            this.timerId = null;
         }
     }
 
     return new Clock();
+    // return Clock;
 })();
