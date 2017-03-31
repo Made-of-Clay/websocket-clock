@@ -3,6 +3,9 @@
 <head>
     <title>Websocket Clock</title>
     <link rel="stylesheet" href="dist/styles.css">
+    <style id="hour-style"></style>
+    <style id="minute-style"></style>
+    <style id="second-style"></style>
 </head>
 <body>
 
@@ -24,12 +27,14 @@
         </div>
 
         <div class="hands">
+            <span class="hand" id="second" data-display=""></span>
             <span class="hand" id="minute" data-display=""></span>
             <span class="hand" id="hour" data-display=""></span>
             <span id="hand-cover">&middot;</span>
         </div>
     </div>
 </article>
+<script src="/assets/socket.io.js"></script>
 <script src="dist/script.js"></script>
 </body>
 </html>

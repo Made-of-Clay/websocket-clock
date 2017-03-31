@@ -5,9 +5,9 @@
     background-color: #333;
     border-radius: 50% 50% 0 0;
     bottom: 50%;
-    height: 50%;
     left: 49.5%;
     @include transform-origin(50% 100%);
+    @include transition(0.3s);
     width: 0.5em;
 
     @extend %clock-elements;
@@ -17,7 +17,12 @@
     border: 0.15em solid red;
 }
 #minute {
-    //
+    height: 45%;
+}
+#second {
+    background-color: #a00;
+    height: 40%;
+    width: 0.2em;
 }
 #hand-cover {
     border: 0.65em solid;

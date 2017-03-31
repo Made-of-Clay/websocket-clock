@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Made-of-Clay/websocket-clock#readme",
   "dependencies": {
     "express": "^4.15.2",
+    "node-clock": "^0.1.1",
     "socket.io": "^1.7.3"
   }
 }
