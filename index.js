@@ -12,7 +12,11 @@ const events = require('events');
 // const emitter = new events.EventEmitter();
 global.emitter = new events.EventEmitter();
 
-http.listen(3030, () => console.log('listening on 10.0.0.236:3030') );
+const os = require('os');
+let interfaces = os.networkInterfaces();
+let address = interfaces.eth0[0].address;
+
+http.listen(3030, () => console.log(`listening on ${address}:3030`) );
 
 app.get('/', serveIndex);
 app.get('/index.html', serveIndex);
