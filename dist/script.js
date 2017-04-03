@@ -21,14 +21,20 @@
         };
         hourHand.innerHTML = `
             #hour { 
+                -webkit-transform: rotate(${rotate.hour}deg);
+                -moz-transform: rotate(${rotate.hour}deg);
                 transform: rotate(${rotate.hour}deg);
             }`;
         minHand.innerHTML = `
             #minute { 
+                -webkit-transform: rotate(${rotate.min}deg);
+                -moz-transform: rotate(${rotate.min}deg);
                 transform: rotate(${rotate.min}deg);
             }`;
         secHand.innerHTML = `
             #second { 
+                -webkit-transform: rotate(${rotate.sec}deg);
+                -moz-transform: rotate(${rotate.sec}deg);
                 transform: rotate(${rotate.sec}deg);
             }`;
     });
