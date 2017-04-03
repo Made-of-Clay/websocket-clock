@@ -8,15 +8,15 @@ const app = express();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
 const clock = require('./src/scripts/server/clock');
+const getAddresses = require('./src/scripts/server/addresses');
 const events = require('events');
 // const emitter = new events.EventEmitter();
 global.emitter = new events.EventEmitter();
 
-const os = require('os');
-let interfaces = os.networkInterfaces();
-let address = interfaces.eth0[0].address;
-
-http.listen(3030, () => console.log(`listening on ${address}:3030`) );
+const port = 3030;
+let addressArr = getAddresses().map(address => `${address}:${port}`);
+let addressString = addressArr.join(', ');
+http.listen(port, () => console.log(`listening on the following: ${addressString}`) );
 
 app.get('/', serveIndex);
 app.get('/index.html', serveIndex);
